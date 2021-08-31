@@ -1,6 +1,7 @@
-import firebase from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
-import 'firebase/firestore';
+// v9 compat packages are API compatible with v8 code
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -14,7 +15,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const db = firebase.firestore();
 export default db;
