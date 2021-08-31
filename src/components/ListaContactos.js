@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import db from '../firebase/firebaseConfig';
@@ -18,6 +18,14 @@ const ListaContactos = () => {
             correo: 'gabriel@correo.com'
         }
     ]);
+
+    useEffect(() => {
+        db.collection('usuarios').onSnapshot((snapshot) => {
+            cambiarContactos(snapshot.docs.map((documento) =>{
+                return {...documento.data(), id: documento.id}
+            }));
+        });
+    }, [])
 
     return (
         contactos.length > 0 &&
