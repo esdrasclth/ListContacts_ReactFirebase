@@ -14,11 +14,11 @@ const Formulario = () => {
             nombre: nombre,
             correo: correo
         })
-        .then(() => console.log('Se agrega correctamente un documento.'))
-        .catch((error) => {
-            console.log('Ocurrio un error al intentar guardar el documento.'); 
-            console.log(error)
-        });
+            .then(() => console.log('Se agrega correctamente un documento.'))
+            .catch((error) => {
+                console.log('Ocurrio un error al intentar guardar el documento.');
+                console.log(error)
+            });
 
         cambiarNombre('');
         cambiarCorreo('');

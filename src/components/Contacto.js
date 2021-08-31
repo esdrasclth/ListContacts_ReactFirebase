@@ -1,35 +1,35 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import db from '../firebase/firebaseConfig'
 
 const Contacto = ({ id, nombre, correo }) => {
-    
+
     const [editandoTarea, cambiarEditandoTarea] = useState(false);
 
     return (
         <ContenedorContacto>
             {editandoTarea ?
                 <form action="">
-                    <Input 
-                        type="text" 
+                    <Input
+                        type="text"
                         name="nombre"
-                        placeholder="Nombre" 
+                        placeholder="Nombre"
                     />
-                    <Input 
+                    <Input
                         type="email"
                         name="correo"
-                        placeholder="Correo" 
+                        placeholder="Correo"
                     />
                     <Boton type="submit">Actualizar</Boton>
                 </form>
-            :
-            <>
-                <Nombre>{nombre}</Nombre>
-                <Correo>{correo}</Correo>
-                <Boton onClick={() => cambiarEditandoTarea(!editandoTarea)}>Editar</Boton>
-                <Boton>Borrar</Boton>
-            </>
+                :
+                <>
+                    <Nombre>{nombre}</Nombre>
+                    <Correo>{correo}</Correo>
+                    <Boton onClick={() => cambiarEditandoTarea(!editandoTarea)}>Editar</Boton>
+                    <Boton>Borrar</Boton>
+                </>
             }
         </ContenedorContacto>
     );

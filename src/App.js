@@ -7,9 +7,9 @@ import ListaContactos from './components/ListaContactos';
 const App = () => {
   return (
     <Contenedor>
-        <Titulo>Lista de contactos.</Titulo>
-        <Formulario />
-        <ListaContactos />
+      <Titulo>Lista de contactos.</Titulo>
+      <Formulario />
+      <ListaContactos />
     </Contenedor>
   );
 }
